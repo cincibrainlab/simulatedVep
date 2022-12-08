@@ -174,17 +174,31 @@ if ~ismissing(peak_channel)
 
     % apply Gaussian distribution of amplitudes to VEP data
     for i = 1:EEG.nbchan % loop through channels
-        % calculate distance from focus channel
-        distance = abs(i - prominenceChannel);
+        % calculate euclidian distance from focus channel
+        % distance = abs(i - prominenceChannel);
+
+        pCoord = chanlocs(prominenceChannel);
+        cCoord = chanlocs(i);
+        distance = euclideanDistance(pCoord.X, pCoord.Y, pCoord.Z, ...
+            cCoord.X, cCoord.Y, cCoord.Z);
+        
         % calculate amplitude at current channel
         amplitude = prominenceAmplitude * exp(-0.5 * (distance / sigma) ^ 2);
         amp_for_topo(i) = amplitude;
         % apply amplitude to VEP data
         EEG.data(i, :, :) = EEG.data(i, :, :) * amplitude;
     end
+
     figure;
     topoplot(amp_for_topo, EEG.chanlocs); % create scalp plot
 
 end
+
+end
+
+function d = euclideanDistance(x1, y1, z1, x2, y2, z2)
+
+% calculate Euclidean distance
+d = sqrt((x1 - x2)^2 + (y1 - y2)^2 + (z1 - z2)^2);
 
 end
