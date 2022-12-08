@@ -8,6 +8,10 @@ EEGLAB is a prerequisite to build the EEG SET file
 Prerequisites
 This code requires Matlab to run.
 
+Focus of VEP is "Oz" equivelent on EGI 128 net (with a gaussian distribution of the peak)
+![VEP topographic distribution](vepfocus.png)
+
+
 Built With
 Matlab - The programming language used
 Authors
