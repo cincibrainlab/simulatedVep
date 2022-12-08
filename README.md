@@ -1,10 +1,9 @@
 # Simulated Visual Evoked Potential
-This is a Matlab code that simulates a visual evoked potential (VEP) with an initial negativity with a latency of approximately 70 to 80 milliseconds (N75), a larger positive component with a latency of approximately 90 to 110 msec (P100), and a large negative component with a latency of approximately 130 to 140 msec(N135). The code includes a baseline prior to the VEP of 150 msec, and 150 trials that are 1 second long.
-
-The code also includes jitter in the latency values and adds realistic noise to the signal. The VEP is more prominent in the posterior electrodes, based on an EGI hydrocel 128 channel net. The code also generates plots to visualize the simulated VEP data.
+This is a function that generates simulated electroencephalography (EEG) data for a visual evoked potential (VEP) experiment. It takes various parameters as inputs and returns a structure containing the simulated EEG data, the average VEP waveform, the time values corresponding to each sample in the EEG data, and information about the channels in the EEG data. It can be used to test algorithms that analyze VEP data or to train machine learning models. The function uses the input arguments to control the characteristics of the generated data, such as the latencies and amplitudes of the VEP components, the number of trials and channels, and the sample rate and trial length.
 
 Getting Started
 To use this code, download or clone the repository and run the simulated_VEP.m file in Matlab.
+EEGLAB is a prerequisite to build the EEG SET file
 
 Prerequisites
 This code requires Matlab to run.
