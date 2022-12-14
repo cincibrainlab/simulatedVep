@@ -27,7 +27,7 @@ noiseAmplitude = 20;
 
 jitterRange1 = 10;
 jitterRange2 = 50;
-jitterRange3 = 100;
+jitterRange3 = 25;
 jitterRange4 = 100;
 
 peak_channel = 75;
@@ -35,10 +35,12 @@ variability_factor = .1;
 
 EEGCell = {};
 
-for i = 1 : 100
+%for i = 1 : 100
 
 % generate simulated EEG data
-EEGCell{i} = eeg_htpEegSimulateVep(...
+%EEGCell{i} = 
+
+eeg_htpEegSimulateVep(...
     'latency1', latency1, ...
     'latency2', latency2, ...
     'latency3', latency3, ...
@@ -61,4 +63,4 @@ EEGCell{i} = eeg_htpEegSimulateVep(...
     'peak_channel', peak_channel, ...
     'variability_factor', variability_factor);
     
-end
+%end
